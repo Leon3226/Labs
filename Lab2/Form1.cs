@@ -18,6 +18,10 @@ namespace Lab2
         }
 
         private Operation _selectedOperation;
+        private string _mainDisplayString = string.Empty;
+        private string _additionalDisplayString = string.Empty;
+        private double? _bufferNumber;
+        private bool waitingForAnyNumericInput = true;
 
         private Operation selectedOperation
         {
@@ -29,9 +33,6 @@ namespace Lab2
             }
         }
 
-
-        private string _mainDisplayString = string.Empty;
-
         private string mainDisplayString
         {
             get => _mainDisplayString;
@@ -41,8 +42,6 @@ namespace Lab2
                 UpdateMainDisplay();
             }
         }
-
-        private string _additionalDisplayString = string.Empty;
 
         private string additionalDisplayString
         {
@@ -54,7 +53,6 @@ namespace Lab2
             }
         }
 
-        private double? _bufferNumber;
         private double? bufferNumber
         {
             get
@@ -68,7 +66,6 @@ namespace Lab2
             }
         }
 
-        private bool waitingForAnyNumericInput = true;
         private double currentNumber => double.TryParse(mainDisplayString, out double res) ? res : 0;
 
         public string MainDisplayText
